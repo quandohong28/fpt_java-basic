@@ -1,0 +1,55 @@
+package main;
+
+import java.util.Scanner;
+
+public class Main {
+
+	static Scanner sc = new Scanner(System.in);
+
+	public static void main(String[] args) {
+		double a = 0, b = 0;
+		System.out.print("Nhập vào hai số thực a và b: ");
+		try {
+			a = Double.parseDouble(sc.nextLine());
+			b = Double.parseDouble(sc.nextLine());
+		} catch (NumberFormatException e) {
+			System.out.println("Số nhập vào không hợp lệ!" + e.getMessage());
+		}
+		System.out.println("Nhập vào lựa chọn: 'A', 'S', 'M', 'D'");
+		Character input = sc.next().charAt(1);
+		sc.nextLine();
+
+		switch (input) {
+
+		case 'A':
+		case 'a': {
+			double result = a + b;
+			System.out.print("a + b = " + result);
+		}
+
+		case 'S':
+		case 's': {
+			double result = a - b;
+			System.out.print("a - b = " + result);
+		}
+
+		case 'M':
+		case 'm': {
+			double result = a * b;
+			System.out.print("a x b = " + result);
+		}
+
+		case 'D':
+		case 'd': {
+			double result = a / b;
+			System.out.print("a : b = " + result);
+		}
+
+		default: {
+			System.out.println("Ký tự nhập vào không hợp lệ!!!");
+		}
+
+		}
+	}
+
+}
